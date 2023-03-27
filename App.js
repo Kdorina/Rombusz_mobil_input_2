@@ -1,16 +1,40 @@
+/*
+* File: App.java
+* Author: Kovács Dorina
+* Copyright: 2023, Kovács Dorina
+* Group: Szoft II/N
+* Date: 2023-03-27
+* Github: https://github.com/Kdorina/
+* Licenc: GNU GPL
+*/
+
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
 import { TouchableHighlight } from 'react-native';
 import { StyleSheet, Text, TextInput, View } from 'react-native';
 import Button from './Button';
 
+// Option 2
+// function CalcRad(side ,alpha){
+//   let rad = alpha*Math.PI/180;
+//   let result =(1/2)*side*Math.sin(rad);
+//   return result;
+// }
+
 export default function App() {
   const[side, setSide] = useState('');
   const[alpha, setAlpha] = useState('');
   const[result, setResult] = useState('');
 
+  //Option 2
+  // function Calc(){
+  //   let result = CalcRad(side ,alpha);
+  //   setResult(result);
+  // }
+
   function Calc(){
-    let result =( 1/2)*side*Math.sin(alpha);
+    let rad = alpha*Math.PI/180;
+    let result =(1/2)*side*Math.sin(rad);
     setResult(result);
   }
 
